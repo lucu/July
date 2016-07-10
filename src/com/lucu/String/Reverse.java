@@ -32,6 +32,19 @@ public class Reverse {
 		return s;	
 	}
 	
+	/**
+	 * 反转一个单词，例如输入“I am lucu.",输出"lucu. am I"
+	 * @param s
+	 * @return
+	 */
+	public String wordReverse(String s){
+		String[] words=s.split(" ");
+		String word,result="";
+		for(int i=words.length-1;i>=0;i--){
+			result=result.concat(words[i]).concat(" ");
+		}
+		return result;
+	}
 	
 	public static void main(String[] args){
 		Reverse reverse=new Reverse();
@@ -44,5 +57,8 @@ public class Reverse {
 		String old_left=reverse.ReverseString(s.substring(n));
 		//3，对上诉两个子字符串整体反转,把“cbafed”旋转成为defabc；
 		System.out.println(reverse.ReverseString(old_right+old_left));
-	}
+		
+		System.out.println(reverse.wordReverse("I am lucu."));
+	} 
 }
+
